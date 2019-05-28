@@ -8,7 +8,8 @@ public class TweetListener {
     StatusListener listener = new StatusListener() {
         @Override
         public void onStatus(Status status) {
-            System.out.println(status.getUser().getName() + " : " + status.getText());
+            Tweet twt = new Tweet(status.getUser().getName(), status.getText(), status.getCreatedAt());
+            System.out.println(twt.getTweetDate().toString() + " : " + twt.getUsername() + " : " + twt.getTweetText());
         }
 
         @Override
